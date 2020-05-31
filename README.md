@@ -6,12 +6,12 @@ Each element has the same structure:
 
 ```
 {
-  "atomicNumber": number,
-  "symbol": string,
-  "name": string,
-  "mass": number,
-  "electronConfiguration": string,
-  "group": string
+  atomicNumber: number,
+  symbol: string,
+  name: string,
+  mass: number,
+  electronConfiguration: string,
+  group: string
 }
 ```
 
