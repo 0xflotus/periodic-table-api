@@ -1,0 +1,1 @@
+In order to handle requests to the root path with Node.js and avoid displaying an HTML file, the public folder has to be empty
