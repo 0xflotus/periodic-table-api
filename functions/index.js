@@ -7,10 +7,12 @@ const app = express();
 app.use(cors());
 
 app.get("/", (req, res) => {
+  res.set("Cache-Control", "public, max-age=300, s-maxage=600");
   res.send(data);
 });
 
 app.get("/element", (req, res) => {
+  res.set("Cache-Control", "public, max-age=300, s-maxage=600");
   if (req.query.atomicNumber != undefined || req.query.z != undefined) {
     if (req.query.atomicNumber == "" || req.query.z == "") return res.send("No atomic number given");
     var element = data.find((e) => e.atomicNumber === parseInt(req.query.atomicNumber || req.query.z));
@@ -34,6 +36,7 @@ app.get("/element", (req, res) => {
 });
 
 app.get("/group", (req, res) => {
+  res.set("Cache-Control", "public, max-age=300, s-maxage=600");
   if (req.query.g != undefined) {
     if (req.query.g.toLowerCase() == "alkali" || req.query.g.toLowerCase() == "alkaline earth" || req.query.g.toLowerCase() == "noble gas" || req.query.g.toLowerCase() == "metalloid" || req.query.g.toLowerCase() == "nonmetal" || req.query.g.toLowerCase() == "halogen" || req.query.g.toLowerCase() == "transition metal" || req.query.g.toLowerCase() == "post-transition metal" || req.query.g.toLowerCase() == "lanthanide" || req.query.g.toLowerCase() == "actinide") {
       var elements = [];
